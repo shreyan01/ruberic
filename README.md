@@ -1,2 +1,11 @@
 # Ruberic
-Ruberic is a documentation assistant chat software that fulfills all your needs to have a chatbot that can assist your user with your software/platform/tech's documentation and usage! 
+Ruberic is an open-source **documentation chatbot assistant** powered by **RAG (Retrieval-Augmented Generation)**.  
+It lets you connect your own LLM provider (**BYOK – Bring Your Own Key**) and build a powerful doc search assistant for your projects.  
+
+## Getting Started
+
+Ruberic is a BYOK software that can be accessed through API endpoints and an API key that you can access through the dashboard. Here's more precisely how the Ruberic bot works: 
+
+### Query Processing
+The following architecture provides a brief insight into how Ruberic processes queries sent from your applications. 
+![Query Processing Architecture Diagram](./public/ruberic_internal_architecture.png)
