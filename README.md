@@ -9,3 +9,6 @@ Ruberic is a BYOK software that can be accessed through API endpoints and an API
 ### Query Processing
 The following architecture provides a brief insight into how Ruberic processes queries sent from your applications. 
 ![Query Processing Architecture Diagram](./public/ruberic_internal_architecture.png)
+
+### Ingestion 
+For now I'm trying to accept direct pdfs, doc files for documentations. But later on I plan to add crawlers that can retrieve significant documentation data that can be ingested into the vector DB. 

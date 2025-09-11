@@ -1,102 +1,58 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col bg-black text-white">
+      {/* Brand top left */}
+      <div className="fixed top-6 left-8 z-50 text-3xl font-extrabold italic brand-logo tracking-tight select-none pointer-events-none">
+        Ruberic
+      </div>
+      {/* Glassy Navbar */}
+      <nav className="sticky top-6 z-40 flex justify-center w-full">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-full w-1/2 h-11 flex items-center justify-between px-3 py-1 text-sm font-medium transition-all duration-300">
+          {/* Removed Mailzinos from here */}
+          <div className="flex gap-6 items-center pr-6">
+            <a href="#features" className="hover:text-cyan-400 transition-colors">Features</a>
+            <a href="#pricing" className="hover:text-cyan-400 transition-colors">Pricing</a>
+            <a href="#how" className="hover:text-cyan-400 transition-colors">How it works</a>
+          </div>
+          <HoverBorderGradient as="div" containerClassName="ml-2">
+            <Button size="sm" className="rounded-full text-xs border-none">Sign In</Button>
+          </HoverBorderGradient>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+      {/* Hero Section (Ruberic – Documentation Chatbot Assistant) */}
+      <section className="flex-1 flex flex-col items-center justify-center pt-16 pb-20 px-6 text-center gap-6">
+        <div className="mx-auto mb-3 bg-white/10 text-white/80 rounded-full px-5 py-1 text-xs font-medium backdrop-blur-sm border border-white/20 w-fit">Open‑source • BYOK</div>
+        <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight max-w-3xl">A documentation chatbot assistant powered by RAG</h1>
+        <p className="text-lg text-gray-200 max-w-2xl mx-auto">Connect your own LLM provider (Bring Your Own Key) and add accurate, fast documentation Q&A to your product. Query Ruberic via simple API endpoints secured by your dashboard API key.</p>
+        <div className="flex items-center gap-4 justify-center">
+          <Button size="lg" className="rounded-full px-6 py-5 bg-orange-500/90 hover:bg-orange-500/80">Read the Docs</Button>
+          <HoverBorderGradient as="div">
+            <Button size="lg" variant="outline" className="rounded-full px-6 py-5">Join the Waitlist</Button>
+          </HoverBorderGradient>
+        </div>
+      </section>
+
+      {/* How Ruberic Works */}
+      <section id="how" className="px-6 pb-8 max-w-6xl mx-auto w-full">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">How it works</h2>
+        <p className="text-zinc-300 mb-6 max-w-3xl">Incoming queries are processed through a retrieval‑augmented generation pipeline. Your content is chunked and embedded, relevant passages are retrieved at query time, and composed with the user prompt for grounded responses.</p>
+        <div className="relative w-full rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900/40">
+          <Image src="/ruberic_internal_architecture.png" alt="Ruberic internal architecture" width={1600} height={900} className="w-full h-auto" priority />
+        </div>
+      </section>
+
+      {/* Ingestion */}
+      <section id="features" className="px-6 pt-8 pb-16 max-w-6xl mx-auto w-full">
+        <h2 className="text-2xl md:text-3xl font-bold mb-3">Ingestion</h2>
+        <p className="text-zinc-300 max-w-3xl">Start today by uploading documentation as PDFs or DOC files. We’re building crawler support to automatically fetch and keep docs in sync.</p>
+      </section>
+      {/* Footer */}
+      <footer className="py-8 text-center text-gray-500 text-sm border-t border-zinc-800 mt-8">
+        &copy; {new Date().getFullYear()} Ruberic. Built with Next.js & shadcn/ui.
       </footer>
     </div>
   );
