@@ -135,7 +135,7 @@ export interface Database {
           content: string;
           content_length: number;
           embedding: number[] | null;
-          metadata: any;
+          metadata: Record<string, unknown>;
           created_at: string;
         };
         Insert: {
@@ -144,13 +144,13 @@ export interface Database {
           content: string;
           content_length: number;
           embedding?: number[] | null;
-          metadata?: any;
+          metadata?: Record<string, unknown>;
         };
         Update: {
           content?: string;
           content_length?: number;
           embedding?: number[] | null;
-          metadata?: any;
+          metadata?: Record<string, unknown>;
         };
       };
       chat_sessions: {
@@ -177,18 +177,18 @@ export interface Database {
           session_id: string;
           role: 'user' | 'assistant' | 'system';
           content: string;
-          metadata: any;
+          metadata: Record<string, unknown>;
           created_at: string;
         };
         Insert: {
           session_id: string;
           role: 'user' | 'assistant' | 'system';
           content: string;
-          metadata?: any;
+          metadata?: Record<string, unknown>;
         };
         Update: {
           content?: string;
-          metadata?: any;
+          metadata?: Record<string, unknown>;
         };
       };
       usage_tracking: {
