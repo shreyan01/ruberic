@@ -43,7 +43,10 @@ The system consists of:
    supabase/migrations/001_initial_schema.sql
    supabase/migrations/002_rls_policies.sql
    supabase/migrations/003_vector_search_function.sql
+   supabase/migrations/004_vector_index.sql
    ```
+   
+   **Important**: Run each migration file separately in the Supabase SQL editor. Do not combine them into a single query.
 
 ### 2. Environment Variables
 
